@@ -7,7 +7,7 @@ import bind from '../../shared/decorators/bind';
 import {constants} from '../../../data/SiteConfig';
 import Icon from '../../shared/assets/icons';
 import {Glyph} from '../../shared/assets/glyph';
-import Navigation from './Navigation';
+import Navigation from '../Navigation/Navigation';
 
 import './header.scss';
 

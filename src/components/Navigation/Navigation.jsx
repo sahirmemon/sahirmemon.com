@@ -9,7 +9,7 @@ export default class Navigation extends React.Component {
 
   @bind
   setClassNames(link, location) {
-    const base = 'menu-item';
+    const base = 'menu-item-link';
     if (!String.prototype.startsWith) {
       String.prototype.startsWith = function(searchString, position) { // eslint-disable-line
         position = position || 0;
@@ -27,8 +27,8 @@ export default class Navigation extends React.Component {
     return (
       <nav className={`page-nav ${className}`} {...props}>
         <ul className='menu'>
-          <li>
-            <Link to='/' className='menu-item' activeClassName='active' onClick={() => onMenuToggle('collapse')}>
+          <li className='menu-item'>
+            <Link to='/' className='menu-item-link' activeClassName='active' onClick={() => onMenuToggle('collapse')}>
               Home
             </Link>
           </li>

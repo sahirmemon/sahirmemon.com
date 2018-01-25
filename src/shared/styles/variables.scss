@@ -1,0 +1,83 @@
+@import '../../shared/styles/colors.scss';
+
+// Breakpoints
+$xs: 480px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xl: 1600px;
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (xs: $xs, sm: $sm, md: $md, lg: $lg, xl: $xl);
+
+// Body
+$body-bg: $white;
+$body-color: $gray-700;
+$inverse-bg: $gray-900;
+$inverse-color: $gray-600;
+$body-border: #d0d0d0;
+$selection-bg: #b4d5fe;
+
+
+// Fonts
+$font-family-sans-serif: 'Nunito Sans', Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 1 rem;
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+$h1-font-size: 1.6rem;
+$h2-font-size: 1.4rem;
+$h3-font-size: 1.2rem;
+$h4-font-size: 1.1rem;
+$h5-font-size: 1.05rem;
+$h6-font-size: 1rem;
+
+$headings-font-family: inherit;
+$headings-font-weight: 600;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+
+$display1-size: 6rem;
+$display2-size: 5.5rem;
+$display3-size: 4.5rem;
+$display4-size: 3.5rem;
+
+$text-color: $gray-900;
+
+// Scaffolding
+$grid-columns: 12;
+$grid-gutter-width: 2.5rem;
+$p-max-width: 30em;
+$img-max-width: 1328px;
+$preview-max-width: 420px;
+$jumbotron-height-md: 50vh;
+
+// Links
+$link-decoration: none;
+$link-hover-decoration: none;
+$text-reduced-color: $gray-700;
+$link-color: $indigo;
+$link-hover-color: darken($link-color, 20%);
+
+// Buttons
+$btn-focus-border: $text-color;
+
+// Transitions
+$transition-duration-base: 175ms;
+$transition-duration-long: 300ms;
+$transition-bezier: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+// Header
+$navbar-height: 3rem;
+$header-width-md: 18rem;
+$logo-height-md: 3.5rem;

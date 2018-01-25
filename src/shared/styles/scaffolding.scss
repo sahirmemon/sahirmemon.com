@@ -1,0 +1,52 @@
+// Box Sizing Reset
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  background-color: $body-bg;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: 1rem;
+}
+
+// Spacing Helpers
+.content-set {
+  > * + * {
+    margin-top: $grid-gutter-width * 1.5;
+    @media (min-width: $md) {
+      margin-top: $grid-gutter-width * 2;
+    }
+  }
+
+  &-sm > * + * {
+    margin-top: $grid-gutter-width;
+  }
+}
+
+.content-padded {
+  padding: $grid-gutter-width;
+  @media (min-width: $sm) {
+    padding: ($grid-gutter-width * 2);
+  }
+
+  &-lg {
+    padding: ($grid-gutter-width * 2) $grid-gutter-width;
+    @media (min-width: $sm) {
+      padding: ($grid-gutter-width * 4) ($grid-gutter-width * 2);
+    }
+  }
+}
+
+// Styling Helpers
+.disabled {
+  opacity: 0.4;
+}
+
+// Selection Styles
+::selection {
+  background-color: $selection-bg;
+}

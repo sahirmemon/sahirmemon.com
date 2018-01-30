@@ -2,6 +2,7 @@ import React from 'react';
 import {Motion, spring} from 'react-motion';
 import Link from 'gatsby-link';
 import sortBy from 'lodash/sortBy';
+import ReactSVG from 'react-svg';
 
 import bind from '../../shared/decorators/bind';
 import {constants} from '../../../data/SiteConfig';
@@ -61,33 +62,37 @@ export default class Header extends React.Component {
 
     return (
       <header className='page-header'>
-        <h1 className='page-brand-wrapper'>
-          <Link className='brand page-brand' to='/' onClick={() => this.onMenuToggle('collapse')}>
-            <Icon glyph={Glyph.Logo} className='page-brand-logo'/>
-            <span className="page-brand-text">{siteTitle}</span>
-          </Link>
-          {currentCategory && !this.state.isMenuVisible && <Link className="page-brand page-brand-category" to={currentCategoryLink.path} onClick={() => this.onMenuToggle('collapse')}>
-            <span className="page-brand-label">
-              {currentCategoryLink.title}
-            </span>
-          </Link>
-          }
-          {this.state.isMenuVisible && <span className="page-brand page-brand-category disabled">
-            <span className="page-brand-label">Menu</span>
-          </span>}
-          <button className={`page-nav-toggle ${this.state.isMenuVisible
-            ? 'opened'
-            : 'closed'}`} type="button" onClick={() => this.onMenuToggle()}>
-            <span className="close">
-              Close
-              <Icon glyph={Glyph.Close}/>
-            </span>
-            <span className="open">
-              Menu
-              <Icon glyph={Glyph.Menu}/>
-            </span>
-          </button>
-        </h1>
+        <div className='page-brand-wrapper'>
+          <h1 className='page-brand-header'>
+            <Link className='brand page-brand' to='/' onClick={() => this.onMenuToggle('collapse')}>
+              <Icon glyph={Glyph.Logo} className='page-brand-logo'/>
+              <span className="page-brand-text">{siteTitle}</span>
+            </Link>
+            {currentCategory && !this.state.isMenuVisible && <Link className="page-brand page-brand-category" to={currentCategoryLink.path} onClick={() => this.onMenuToggle('collapse')}>
+              <span className="page-brand-label">
+                {currentCategoryLink.title}
+              </span>
+            </Link>
+            }
+          </h1>
+          <div className='page-brand-nav'>
+            <Navigation className='desktop-menu' location={location} pages={menuItems} />
+            {this.state.isMenuVisible && <span className="page-brand page-brand-category disabled">
+              <span className="page-brand-label">Menu</span>
+            </span>}
+            <button className={`page-nav-toggle ${this.state.isMenuVisible
+              ? 'opened'
+              : 'closed'}`} type="button" onClick={() => this.onMenuToggle()}>
+              <span className="close">
+                <Icon glyph={Glyph.Close}/>
+              </span>
+              <span className="open">
+                Menu
+                <Icon glyph={Glyph.Menu}/>
+              </span>
+            </button>
+          </div>
+        </div>
         <Motion style={{
           x: spring(this.state.isMenuVisible
             ? 1

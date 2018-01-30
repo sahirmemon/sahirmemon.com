@@ -33,7 +33,7 @@ export default class Navigation extends React.Component {
             </Link>
           </li>
           {pages.map(page =>
-            <li key={page.category}>
+            <li className='menu-item' key={page.category}>
               <Link to={page.path} className={this.setClassNames(page.path, location)} activeClassName='active'>
                 {page.title}
               </Link>

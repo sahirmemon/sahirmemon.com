@@ -14,12 +14,6 @@ export default class MainLayout extends React.Component {
     this.state = {
       pages: [
         {
-          id: '1',
-          title: 'Home',
-          path: '/',
-          category: 'home'
-        },
-        {
           id: '2',
           title: 'Projects',
           path: '/projects',

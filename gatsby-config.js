@@ -52,6 +52,7 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     "gatsby-plugin-sharp",
+    "gatsby-plugin-svg-sprite",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",

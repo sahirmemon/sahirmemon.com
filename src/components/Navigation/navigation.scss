@@ -1,9 +1,6 @@
 @import '../../shared/styles/variables.scss';
 @import '../../shared/styles/colors.scss';
 
-// Variables
-$navbar-height: 3rem;
-
 // Mobile Navigation Toggle
 .page-nav-toggle {
   position: relative;
@@ -39,7 +36,7 @@ $navbar-height: 3rem;
     top: 50%;
     right: 0;
     width: 1.6rem;
-    height: 1.6rem;
+    height: 1.2rem;
     transform: translate(50%, -50%);
   }
 
@@ -53,23 +50,34 @@ $navbar-height: 3rem;
   }
 
   .close {
+    color: #000000;
+    opacity: 1;
     margin-right: $grid-gutter-width / 2;
+    &:hover, &:focus {
+      opacity: 1;
+    }
   }
 }
 
 // Navigation Container
 @media (min-width: $md) {
+  .desktop-menu {
+    display: inline-block !important;
+  }
   .page-nav {
-    display: block !important;
+    display: none;
     transform: none !important;
     font-size: 0.8rem;
-
+    width: 100%;
     &-overlay {
       display: none !important;
     }
   }
 }
 @media (max-width: $md - 1) {
+  .desktop-menu {
+    display: none;
+  }
   .page-nav {
     display: none;
     position: fixed;
@@ -122,16 +130,15 @@ $navbar-height: 3rem;
   padding: 0;
   list-style: none;
   line-height: 1;
-  // @media (min-width: $md) {
-  //   margin-top: ($grid-gutter-width * 3) - ($grid-gutter-width / 4);
-  // }
-  // @media (min-width: $xl) {
-  //   margin-top: ($grid-gutter-width * 4) - ($grid-gutter-width / 4);
-  // }
+  @media (min-width: $md) {
+    width: 100%;
+  }
 
   &-item {
-    display: inline-block;
-
+    display: block;
+    @media (min-width: $md) {
+      display: inline-block;
+    }
     &-link {
       display: block;
       position: relative;
@@ -143,8 +150,7 @@ $navbar-height: 3rem;
       text-transform: uppercase;
       text-decoration: none;
       @media (min-width: $md) {
-        padding-top: $grid-gutter-width / 4;
-        padding-bottom: $grid-gutter-width / 4;
+        padding: $grid-gutter-width / 4;
       }
 
       &::before {
@@ -158,6 +164,9 @@ $navbar-height: 3rem;
         border: 1px solid;
         transform: translate(-105%, 0);
         transition: transform $transition-duration-base $transition-bezier;
+        @media(min-width: $md) {
+          display: none;
+        }
       }
 
       &:focus,

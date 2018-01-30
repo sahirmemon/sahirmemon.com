@@ -3,7 +3,6 @@
 
 // Page Header
 .page-header {
-  background: red;
   a {
     &::after {
       content: '';
@@ -50,10 +49,11 @@
   text-decoration: none;
 
   &-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
     height: $navbar-height;
     margin: 0;
     padding-left: $grid-gutter-width / 2;
@@ -67,11 +67,14 @@
     text-transform: uppercase;
   }
 
+  &-header {
+    margin-bottom: 0;
+  }
+
   &-logo {
-    width: 1.6rem;
-    height: 1.6rem;
-    margin-top: -1px;
-    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 10px;
   }
 
   &-subtitle,
@@ -87,7 +90,16 @@
   &-label {
     vertical-align: middle;
   }
+
+  &-text {
+    display: none;
+  }
 }
+
+.desktop-menu {
+  display: none;
+}
+
 @media (min-width: $sm) {
   .page-brand {
     &-wrapper {
@@ -102,6 +114,10 @@
     height: 100%;
 
     &-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
       height: 100%;
       margin: 0;
@@ -112,6 +128,10 @@
       letter-spacing: 0;
     }
 
+    &-header {
+      margin-top: 0.5rem;
+    }
+
     &-logo {
       flex: 0 0 auto;
       width: $logo-height-md;
@@ -120,9 +140,9 @@
     }
 
     &-text {
-      display: block;
       padding-left: $grid-gutter-width / 4;
       overflow: hidden;
+      display: none;
     }
 
     &-title {

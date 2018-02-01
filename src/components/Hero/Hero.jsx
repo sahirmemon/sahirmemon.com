@@ -32,10 +32,8 @@ class Hero extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { width } = this.state;
     const showVideo = width > 991 ? true : false;
-    console.log(showVideo);
     return (
       <div>
         {showVideo && <video className='hero-video' autoPlay muted src={heroVideo}></video> }

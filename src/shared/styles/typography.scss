@@ -1,6 +1,5 @@
-@import './variables';
-@import './mixins';
-@import './fonts';
+@import './mixins.scss';
+@import './fonts.scss';
 
 html {
   font-size: $font-size-base + 1;
@@ -13,6 +12,7 @@ html {
   @media (min-width: $xl) {
     font-size: $font-size-base + 2;
   }
+  font-family: $font-family-base;
 }
 
 // Links

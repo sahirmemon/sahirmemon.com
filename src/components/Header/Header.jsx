@@ -10,8 +10,6 @@ import Icon from '../../shared/assets/icons';
 import {Glyph} from '../../shared/assets/glyph';
 import Navigation from '../Navigation/Navigation';
 
-import './header.scss';
-
 export default class Header extends React.Component {
 
   constructor(props) {
@@ -66,27 +64,29 @@ export default class Header extends React.Component {
           <h1 className='page-brand-header'>
             <Link className='brand page-brand' to='/' onClick={() => this.onMenuToggle('collapse')}>
               <Icon glyph={Glyph.Logo} className='page-brand-logo'/>
-              <span className="page-brand-text">{siteTitle}</span>
+              <span className='page-brand-text'>{siteTitle}</span>
             </Link>
-            {currentCategory && !this.state.isMenuVisible && <Link className="page-brand page-brand-category" to={currentCategoryLink.path} onClick={() => this.onMenuToggle('collapse')}>
-              <span className="page-brand-label">
+            {currentCategory && !this.state.isMenuVisible && <Link className='page-brand page-brand-category' to={currentCategoryLink.path} onClick={() => this.onMenuToggle('collapse')}>
+              <span className='page-brand-label'>
                 {currentCategoryLink.title}
               </span>
             </Link>
             }
+            {this.state.isMenuVisible && <span className='page-brand page-brand-category disabled'>
+              <span className='page-brand-label'>Menu</span>
+            </span>
+            }
           </h1>
           <div className='page-brand-nav'>
             <Navigation className='desktop-menu' location={location} pages={menuItems} />
-            {this.state.isMenuVisible && <span className="page-brand page-brand-category disabled">
-              <span className="page-brand-label">Menu</span>
-            </span>}
             <button className={`page-nav-toggle ${this.state.isMenuVisible
               ? 'opened'
-              : 'closed'}`} type="button" onClick={() => this.onMenuToggle()}>
-              <span className="close">
+              : 'closed'}`} type='button' onClick={() => this.onMenuToggle()}>
+              <span className='close'>
+                <span className='text'>CLOSE</span>
                 <Icon glyph={Glyph.Close}/>
               </span>
-              <span className="open">
+              <span className='open'>
                 Menu
                 <Icon glyph={Glyph.Menu}/>
               </span>
@@ -101,7 +101,7 @@ export default class Header extends React.Component {
             damping: 30
           })
         }}>
-          {({x}) => <div className="page-nav-overlay" style={{
+          {({x}) => <div className='page-nav-overlay' style={{
             display: x === 0
               ? 'none'
               : 'block',

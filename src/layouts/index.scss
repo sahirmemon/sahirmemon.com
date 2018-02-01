@@ -1,2 +1,15 @@
 // Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/variables';
+@import '../shared/styles/mixins.scss';
+@import '../shared/styles/variables.scss';
+// @import '../shared/styles/bootstrap/responsive-utilities.scss';
+@import '../shared/styles/colors.scss';
+@import '../shared/styles/scaffolding.scss';
+@import '../shared/styles/typography.scss';
+@import '../shared/styles/images.scss';
+
+@import '../shared/styles/header.scss';
+@import '../shared/styles/navigation.scss';

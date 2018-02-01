@@ -45,6 +45,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `lato\:300,400,700`
+        ]
+      }
+    },
+    {
       resolve: "gatsby-plugin-nprogress",
       options: {
         color: config.themeColor

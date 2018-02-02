@@ -26,13 +26,19 @@ export default class Navigation extends React.Component {
       <nav className={`page-nav ${className}`} {...props}>
         <ul className='menu'>
           <li className='menu-item'>
-            <Link to='/' className='menu-item-link' activeClassName='active' onClick={() => onMenuToggle('collapse')}>
+            <Link to='/'
+            className='menu-item-link'
+            activeClassName='active'
+            onClick={() => onMenuToggle('collapse')}>
               Home
             </Link>
           </li>
           {pages.map(page =>
             <li className='menu-item' key={page.category}>
-              <Link to={page.path} className={this.setClassNames(page.path, location)} activeClassName='active'>
+              <Link to={page.path}
+                className={this.setClassNames(page.path, location)}
+                activeClassName='active'
+                onClick={() => onMenuToggle('collapse')}>
                 {page.title}
               </Link>
             </li>

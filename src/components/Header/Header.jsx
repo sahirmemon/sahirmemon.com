@@ -21,7 +21,6 @@ export default class Header extends React.Component {
 
   @bind
   onMenuToggle(toggle) {
-    console.log('ON MENU TOGGLE');
     const breakpoint = constants.breakpoint;
     if (window.innerWidth < breakpoint.md) {
       const scrollElement = document.getElementsByTagName('html')[0];

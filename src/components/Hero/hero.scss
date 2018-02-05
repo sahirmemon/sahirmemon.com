@@ -1,10 +1,12 @@
 @import '../../shared/styles/variables.scss';
 @import '../../shared/styles/colors.scss';
 
-.hero-video {
-
+.hero-wrapper {
+  margin-top: -$navbar-height;
 }
 
 @media (min-width: $md) {
-
+  .hero-wrapper {
+    margin-top: -$navbar-height-md;
+  }
 }

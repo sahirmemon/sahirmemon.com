@@ -35,7 +35,7 @@ class Hero extends React.Component {
     const { width } = this.state;
     const showVideo = width > 991 ? true : false;
     return (
-      <div>
+      <div className='hero-wrapper'>
         {showVideo && <video className='hero-video' autoPlay muted src={heroVideo}></video> }
         {!showVideo && <img className='hero-image' src={heroBkg} /> }
       </div>

@@ -35,9 +35,14 @@ class Hero extends React.Component {
     const { width } = this.state;
     const showVideo = width > 991 ? true : false;
     return (
-      <div className='hero-wrapper'>
+      <div className='hero'>
         {showVideo && <video className='hero-video' autoPlay muted src={heroVideo}></video> }
         {!showVideo && <img className='hero-image' src={heroBkg} /> }
+        <div className='hero-introduction'>
+          <span className='headline'>Hi, I'm Sahir Memon.</span>
+          <span className='sub-headline'>I'm a full-stack engineer in Atlanta.</span>
+          <span className='sub-headline'>I also tinker around with VR and drones.</span>
+        </div>
       </div>
     );
   }

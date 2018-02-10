@@ -83,7 +83,7 @@ export default class Header extends React.Component {
               ? 'opened'
               : 'closed'}`} type='button' onClick={() => this.onMenuToggle()}>
               <span className='close'>
-                <span className='text'>CLOSE</span>
+                <span className='text'>Close</span>
                 <Icon glyph={Glyph.Close}/>
               </span>
               <span className='open'>

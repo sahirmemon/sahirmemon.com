@@ -1,5 +1,14 @@
-@import '../../shared/styles/variables.scss';
-@import '../../shared/styles/colors.scss';
+// SVGs
+#menu_Shape {
+  fill: map-get($theme-colors, light);
+  color: map-get($theme-colors, light);
+}
+@media (min-width: $md) {
+  #logo1_logo {
+    fill: map-get($theme-colors, light);
+    color: map-get($theme-colors, light);
+  }
+}
 
 // Mobile Navigation Toggle
 .page-nav-toggle {
@@ -53,8 +62,12 @@
     transition: right $transition-duration-long $transition-bezier;
   }
 
+  .open {
+    color: map-get($theme-colors, light);
+  }
+
   .close {
-    color: #000000;
+    color: map-get($theme-colors, dark);
     opacity: 1;
     margin-right: $grid-gutter-width / 2;
     &:hover, &:focus {
@@ -137,6 +150,12 @@
 }
 
 // Main Navigation Menu
+.desktop-menu {
+  .menu-item-link {
+    color: map-get($theme-colors, light);
+  }
+}
+
 .menu {
   margin: 0;
   padding: 0;
@@ -157,8 +176,8 @@
       padding-top: $grid-gutter-width / 3;
       padding-bottom: $grid-gutter-width / 3;
       color: inherit;
-      font-weight: 700;
-      letter-spacing: 0.05rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
       text-transform: uppercase;
       text-decoration: none;
       @media (min-width: $md) {

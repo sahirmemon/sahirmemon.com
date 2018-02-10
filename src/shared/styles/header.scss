@@ -17,7 +17,7 @@
     padding-left: $grid-gutter-width;
     padding-right: $grid-gutter-width;
     border-right: 1px solid $body-border;
-
+    z-index: 1025;
     .page-brand {
       &::after {
         top: -$grid-gutter-width / 4;

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import bind from '../../shared/decorators/bind';
 import heroVideo from '../../../static/media/hero.mp4';

@@ -1,35 +1,30 @@
 import React from "react";
 import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
-import Hero from '../components/Hero/Hero';
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 
-class Index extends React.Component {
+export default class TagTemplate extends React.Component {
   render() {
+    const tag = this.props.pathContext.tag;
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
-      <div className="index-container">
-        <Helmet title={config.siteTitle} />
-        <SEO postEdges={postEdges} />
-        <div>
-          <Hero />
-        </div>
-        {/* <PostListing postEdges={postEdges} /> */}
+      <div className="tag-container">
+        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <PostListing postEdges={postEdges} />
       </div>
     );
   }
 }
 
-export default Index;
-
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query IndexQuery {
+  query TagPage($tag: String) {
     allMarkdownRemark(
-      limit: 2000
+      limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
+      totalCount
       edges {
         node {
           fields {

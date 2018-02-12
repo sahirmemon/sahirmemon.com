@@ -1,3 +1,6 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/colors.scss';
+
 // SVGs
 #menu_Shape {
   fill: map-get($theme-colors, light);
@@ -10,7 +13,6 @@
   }
 }
 
-// Mobile Navigation Toggle
 .page-nav-toggle {
   position: relative;
   height: $navbar-height;
@@ -22,9 +24,6 @@
   line-height: normal;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  @media (min-width: $md) {
-    display: none;
-  }
 
   &.closed .close,
   &.opened .open {
@@ -76,25 +75,18 @@
   }
 }
 
-// Navigation Container
-@media (min-width: $md) {
-  .desktop-menu {
-    display: inline-block !important;
-  }
+@media (max-width: $sm - 1) {
   .page-nav {
-    display: none;
-    transform: none !important;
-    font-size: 0.8rem;
-    width: 100%;
-    &-overlay {
-      display: none !important;
-    }
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
   }
 }
+
 @media (max-width: $md - 1) {
   .desktop-menu {
     display: none;
   }
+
   .page-nav {
     display: none;
     position: fixed;
@@ -126,30 +118,47 @@
       pointer-events: none;
     }
   }
-  // Prevent body scrolling when the menu is opened
+
   html.menu-open {
     &,
     body {
       overflow: hidden;
     }
   }
-}
 
-@media (max-width: $sm - 1) {
-  .page-nav {
-    padding-left: $grid-gutter-width / 2;
-    padding-right: $grid-gutter-width / 2;
-  }
-}
-
-@media (max-width: $md - 1) {
   .menu {
     font-size: 1.5rem;
     text-align: center;
   }
 }
 
-// Main Navigation Menu
+@media (min-width: $md) {
+  .desktop-menu {
+    display: inline-block !important;
+  }
+  .page-nav {
+    display: none;
+    transform: none !important;
+    font-size: 0.8rem;
+    width: 100%;
+    &-overlay {
+      display: none !important;
+    }
+  }
+  .page-nav-toggle {
+    display: none;
+  }
+  .menu {
+    width: 100%;
+    &-item {
+      display: inline-block !important;
+      &-link {
+        padding: $grid-gutter-width / 4;
+      }
+    }
+  }
+}
+
 .desktop-menu {
   .menu-item-link {
     color: map-get($theme-colors, light);
@@ -161,15 +170,9 @@
   padding: 0;
   list-style: none;
   line-height: 1;
-  @media (min-width: $md) {
-    width: 100%;
-  }
 
   &-item {
     display: block;
-    @media (min-width: $md) {
-      display: inline-block;
-    }
     &-link {
       display: block;
       position: relative;
@@ -180,9 +183,6 @@
       letter-spacing: 0.1rem;
       text-transform: uppercase;
       text-decoration: none;
-      @media (min-width: $md) {
-        padding: $grid-gutter-width / 4;
-      }
 
       &:focus,
       &:hover {

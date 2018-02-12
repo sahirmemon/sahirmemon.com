@@ -10,6 +10,8 @@ import Icon from '../../shared/assets/icons';
 import {Glyph} from '../../shared/assets/glyph';
 import Navigation from '../Navigation/Navigation';
 
+import './header.scss';
+
 export default class Header extends React.Component {
 
   constructor(props) {

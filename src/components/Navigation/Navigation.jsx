@@ -3,6 +3,8 @@ import Link from 'gatsby-link';
 
 import bind from '../../shared/decorators/bind';
 
+import './navigation.scss';
+
 export default class Navigation extends React.Component {
 
   @bind

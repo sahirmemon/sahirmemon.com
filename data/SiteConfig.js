@@ -1,4 +1,5 @@
 module.exports = {
+  blogPostDir: "sample-posts",
   siteTitle: "Sahir Memon", // Site title.
   siteTitleAlt: "Sahir Memon", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.

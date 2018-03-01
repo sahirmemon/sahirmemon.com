@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import Hero from '../components/Hero/Hero';
+import HomeFeatured from '../components/Hero/Hero';
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 

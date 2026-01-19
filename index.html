@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sahir Memon</title>
-  <meta name="description" content="Software Engineer in Atlanta, GA.">
+  <meta name="description" content="Engineering Manager in New York.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sahir Memon">
-  <meta property="og:description" content="Software Engineer in Atlanta, GA.">
+  <meta property="og:description" content="Engineering Manager in New York.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahirmemon.com">
 
   <link rel="icon" type="image/svg+xml" href="logos/logo.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="logos/logo-512.png">
   <link rel="apple-touch-icon" href="logos/logo-512.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,14 +48,14 @@
     }
 
     .logo {
-      width: 48px;
-      height: 48px;
+      display: block;
+      height: 32px;
     }
 
-    .logo svg {
-      width: 100%;
+    .logo img {
       height: 100%;
-      fill: #e9ecef;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
     nav {
@@ -171,12 +172,7 @@
 <body>
   <header>
     <a href="/" class="logo">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20 L10 80 L25 80 L25 20 Z"/>
-        <path d="M35 20 L35 80 L50 80 L50 20 Z"/>
-        <path d="M60 20 L60 80 L75 80 L75 20 Z"/>
-        <path d="M85 20 L85 80 L100 80 L100 20 Z"/>
-      </svg>
+      <img src="logos/logo.svg" alt="Sahir Memon">
     </a>
 
     <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('open')">
@@ -184,10 +180,7 @@
     </button>
 
     <nav>
-      <a href="/">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/videography">Videography</a>
-      <a href="/about">About</a>
+      <a href="https://linkedin.com/in/sahirmemon" target="_blank" rel="noopener">About</a>
     </nav>
   </header>
 
@@ -196,9 +189,8 @@
       <source src="media/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-content">
-      <h1 class="headline">Hi, I'm Sahir Memon.</h1>
-      <p class="sub-headline">I'm a full-stack engineer in Atlanta.</p>
-      <p class="sub-headline">I also tinker around with VR and drones.</p>
+      <h1 class="headline">Hi, I'm Sahir</h1>
+      <p class="sub-headline">I'm an Engineering Manager in New York</p>
     </div>
   </section>
 </body>

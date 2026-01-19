@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahir Memon</title>
+  <meta name="description" content="Software Engineer in Atlanta, GA.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sahir Memon">
+  <meta property="og:description" content="Software Engineer in Atlanta, GA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sahirmemon.com">
+
+  <link rel="icon" type="image/svg+xml" href="logos/logo.svg">
+  <link rel="apple-touch-icon" href="logos/logo-512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #191d22;
+      color: #e9ecef;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      z-index: 100;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+
+    .logo svg {
+      width: 100%;
+      height: 100%;
+      fill: #e9ecef;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #e9ecef;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 29, 34, 0.75);
+      z-index: 1;
+    }
+
+    .hero-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+
+    .headline {
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .sub-headline {
+      font-size: clamp(1rem, 2.5vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle svg {
+      width: 24px;
+      height: 24px;
+      fill: #e9ecef;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #191d22;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 1.2rem;
+      }
+
+      .nav-toggle {
+        display: block;
+        z-index: 101;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20 L10 80 L25 80 L25 20 Z"/>
+        <path d="M35 20 L35 80 L50 80 L50 20 Z"/>
+        <path d="M60 20 L60 80 L75 80 L75 20 Z"/>
+        <path d="M85 20 L85 80 L100 80 L100 20 Z"/>
+      </svg>
+    </a>
+
+    <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('open')">
+      <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="/videography">Videography</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="media/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1 class="headline">Hi, I'm Sahir Memon.</h1>
+      <p class="sub-headline">I'm a full-stack engineer in Atlanta.</p>
+      <p class="sub-headline">I also tinker around with VR and drones.</p>
+    </div>
+  </section>
+</body>
+</html>
